@@ -23,6 +23,13 @@
                 <button id="submitBtn">Submit</button>
             </form>
         </div>
+        <div class="listContainer">
+           <ul id="list">
+                <li ng-repeat="item in tc.listOfItems">
+                    {{item.instruction}}
+                </li>
+           </ul>
+        </div>
     </div>
 </body>
 </html>

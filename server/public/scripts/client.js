@@ -47,6 +47,6 @@ ToDoApp.controller('ToDoController' , function($http){
             console.log('error:', error);
         });
     }
-
-});
+    getListItems();
+}); 
 
