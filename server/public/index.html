@@ -9,6 +9,9 @@
     <script src="vendors/angular.min.js"></script>
     <!--local JS-->
     <script src="scripts/client.js"></script>
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
     <!--local styles-->
     <link rel="stylesheet" href="styles/styles.css"/>
     <title>To Do List</title>
@@ -20,16 +23,18 @@
             <form id="addItemForm" ng-submit="tc.addListItem(tc.itemToAdd)">
                 <label for="#newItem">New Item</label>
                 <input type="text" ng-model="tc.itemToAdd.instruction"/>
-                <label for="#completed">Completed</label>
-                <input type="text" ng-model="tc.itemToAdd.complete"/>
                 <button id="submitBtn">Submit</button>
             </form>
         </div>
         <div class="listContainer">
            <ul id="list">
                 <li ng-repeat="item in tc.listOfItems" ng-class="item.complete ? 'completed' : 'undone'">
-                    <input type="checkbox" ng-model="checked" ng-change="tc.completeItem(item._id)" ng-true-value="'yes'" ng-false-value="'no'"/>
+                    <input type="checkbox" 
+                    ng-checked="item.complete"
+                    ng-click="tc.completeItem(item._id)" 
+                    />
                     {{item.instruction}}
+                    <button ng-click="tc.deleteItem(item._id)"><i class="fas fa-times"></i></button>
                 </li>
            </ul>
         </div>

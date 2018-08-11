@@ -52,6 +52,16 @@ router.put('/itemComplete/:id', (req, res) =>{
    });
 });
 
+//DELETE
+/* function to delete item from DOM and database */
+router.delete('/:id', (req, res) => {
+    ListOfItems.findByIdAndRemove(req.params.id).then((response) => {
+        res.sendStatus(200);
+    }).catch((error) =>{
+        res.sendStatus(500);
+    });
+});
+
 //GET
 /* function to get data from database and send to client */
 router.get('/', (req, res) => {

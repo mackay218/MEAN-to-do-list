@@ -38,9 +38,22 @@ ToDoApp.controller('ToDoController' , function($http){
             console.log('client side put:', itemID);
             getListItems();
         }).catch(function(error){
-            console.log('put request error:', error);
+            console.log('PUT request error:', error);
         });
     } //end completeItem
+
+
+    tc.deleteItem = function(itemID){
+        $http({
+            method: 'DELETE',
+            url: '/list/' + itemID
+        }).then(function(response){
+            console.log('deleted:', itemID);
+            getListItems();
+        }).catch(function(error){
+            console.log('DELETE request error', error);
+        });
+    }
 
     /* function to get to do list from server */
     //using a declaritive function
