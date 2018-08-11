@@ -21,6 +21,9 @@ Completed Features
 [x] use angular to append to DOM
 [x] change style for completed list items
 [x] add check box to trigger 'PUT' route and style change
+[x] schema in module
+[x] routes in router
+[] create 'PUT' route for complete/checkbox list item
 
     CSS
 [] Background color of the page

@@ -28,6 +28,20 @@ ToDoApp.controller('ToDoController' , function($http){
         });
     }
 
+    //PUT
+    /* function to change status of items to completed */
+    tc.completeItem = function(itemID){
+        $http({
+            method: 'PUT',
+            url: '/list/itemComplete/' + itemID
+        }).then(function(response){
+            console.log('client side put:', itemID);
+            getListItems();
+        }).catch(function(error){
+            console.log('put request error:', error);
+        });
+    } //end completeItem
+
     /* function to get to do list from server */
     //using a declaritive function
     //GET 

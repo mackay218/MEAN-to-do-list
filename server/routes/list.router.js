@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const mongoose = require('mongoose');
 
 //require module containing schema
 const ListOfItems = require('./../modules/itemSchemaModule.js');
@@ -28,7 +28,32 @@ router.post('/', (req, res) => {
     });
 });// end post route
 
+//PUT
+/* function to edit object in database */
+router.put('/itemComplete/:id', (req, res) =>{
+    console.log('update', req.params.id);
 
+   ListOfItems.findOne({_id: req.params.id}).then((foundItem) => {
+        console.log('item found:', foundItem);
+        //console.log('item complete status:', foundItem.complete);
+        if(foundItem.complete == true){
+            foundItem.complete = false;
+        }
+        else if (foundItem.complete == false) {
+            foundItem.complete = true;
+        }
+        console.log('item after check:', foundItem);
+        foundItem.save().then((response) => {
+            res.sendStatus(200);
+        }).catch((error) => {
+            res.sendStatus(500);
+            console.log('error in router put:', error);
+        })
+   });
+});
+
+//GET
+/* function to get data from database and send to client */
 router.get('/', (req, res) => {
     console.log('in server side get');
 

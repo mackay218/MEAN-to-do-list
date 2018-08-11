@@ -28,7 +28,7 @@
         <div class="listContainer">
            <ul id="list">
                 <li ng-repeat="item in tc.listOfItems" ng-class="item.complete ? 'completed' : 'undone'">
-                    <input type="checkbox" ng-model="checked" ng-change="tc.checkChange(item._id, checked)" ng-true-value="'yes'" ng-false-value="'no'"/>
+                    <input type="checkbox" ng-model="checked" ng-change="tc.completeItem(item._id)" ng-true-value="'yes'" ng-false-value="'no'"/>
                     {{item.instruction}}
                 </li>
            </ul>
