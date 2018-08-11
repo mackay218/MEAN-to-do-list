@@ -1,6 +1,5 @@
 const ToDoApp = angular.module('ToDoApp', []);
 
-
 ToDoApp.controller('ToDoController' , function($http){
     console.log('in ToDoController');
 
@@ -14,16 +13,17 @@ ToDoApp.controller('ToDoController' , function($http){
     //POST
     tc.addListItem = function(itemToAdd){
         console.log('in addListItem');
-
+        console.log('is client Post:', itemToAdd);
         $http({
             method: 'POST',
             url: '/list',
             data: itemToAdd
         }).then(function(response){
+            console.log(itemToAdd);
             //call get request
             getListItems();
         }).catch(function(error){
-            console.log('error:', error);
+            console.log('error in client post:', error);
             alert('unable to post item');
         });
     }
@@ -40,9 +40,10 @@ ToDoApp.controller('ToDoController' , function($http){
         }).then(function(response){
             tc.listOfItems = response.data;
         }).catch(function(error){
-            console.log('error:', error);
+            console.log('error in client get:', error);
         });
     }
     getListItems();
+    
 }); 
 

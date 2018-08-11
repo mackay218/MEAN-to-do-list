@@ -35,6 +35,8 @@ Completed Features
 [] Add a category field for the task. Allow users to filter by task category.
 [] Adjust the logic so that completed tasks are brought to the bottom of the page,       where the remaining tasks left to complete are brought to the top of the list.
 
+[] check all/ complete all check box
+[] multiple lists
 
 Next Steps
 

@@ -21,14 +21,14 @@
                 <label for="#newItem">New Item</label>
                 <input type="text" ng-model="tc.itemToAdd.instruction"/>
                 <label for="#completed">Completed</label>
-                <input type="text" ng-model="tc.itemToAdd.completed"/>
+                <input type="text" ng-model="tc.itemToAdd.complete"/>
                 <button id="submitBtn">Submit</button>
             </form>
         </div>
         <div class="listContainer">
            <ul id="list">
                 <li ng-repeat="item in tc.listOfItems" ng-class="item.complete ? 'completed' : 'undone'">
-                    <input type="checkbox"/>
+                    <input type="checkbox" ng-model="checked" ng-change="tc.checkChange(item._id, checked)" ng-true-value="'yes'" ng-false-value="'no'"/>
                     {{item.instruction}}
                 </li>
            </ul>
