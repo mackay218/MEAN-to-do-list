@@ -1,0 +1,24 @@
+{
+  "name": "mean-to-do-list",
+  "version": "1.0.0",
+  "description": "[x] .gitignore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mackay2588/MEAN-to-do-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mackay2588/MEAN-to-do-list/issues"
+  },
+  "homepage": "https://github.com/mackay2588/MEAN-to-do-list#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.2.7"
+  }
+}
