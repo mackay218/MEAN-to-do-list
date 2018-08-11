@@ -17,7 +17,7 @@ Completed Features
 [x] create item and sent to database
 [x] set up get route client side
 [x] set up post and get routes server side
-
+[x] use angular to append to DOM
 Next Steps
 
 Authors

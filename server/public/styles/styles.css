@@ -7,3 +7,16 @@ html, body{
     margin: 0;
     padding: 0;
 }
+
+.completed{
+    background-color: green;
+}
+
+.undone{
+    background-color: transparent;
+}
+
+li{
+    height: 30px;
+    width: 200px;
+}

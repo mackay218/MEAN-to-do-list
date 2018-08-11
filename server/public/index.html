@@ -20,12 +20,14 @@
             <form id="addItemForm" ng-submit="tc.addListItem(tc.itemToAdd)">
                 <label for="#newItem">New Item</label>
                 <input type="text" ng-model="tc.itemToAdd.instruction"/>
+                <label for="#completed">Completed</label>
+                <input type="text" ng-model="tc.itemToAdd.completed"/>
                 <button id="submitBtn">Submit</button>
             </form>
         </div>
         <div class="listContainer">
            <ul id="list">
-                <li ng-repeat="item in tc.listOfItems">
+                <li ng-repeat="item in tc.listOfItems" ng-class="item.complete ? 'completed' : 'undone'">
                     {{item.instruction}}
                 </li>
            </ul>

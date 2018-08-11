@@ -9,10 +9,6 @@ ToDoApp.controller('ToDoController' , function($http){
     //empty array to hold list items
     tc.listOfItems = [];
 
-    tc.itemToAdd = {
-        instruction: 'start list'
-    };
-
     /* function to post new to do item from DOM to server */
     //function should be a function expression
     //POST

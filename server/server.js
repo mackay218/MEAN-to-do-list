@@ -8,7 +8,8 @@ const mongoURI = 'mongodb://localhost:27017/listItems';
 const Schema = mongoose.Schema; 
 
 const ListItemSchema = new Schema({
-    instruction: {type: String}
+    instruction: {type: String},
+    complete: {type: Boolean, default: false}
 });
 
 const ListOfItems = mongoose.model('List', ListItemSchema);
