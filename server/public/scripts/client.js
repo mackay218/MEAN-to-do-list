@@ -1,7 +1,7 @@
 const ToDoApp = angular.module('ToDoApp', []);
 
 
-ToDoApp.controller('ToDoController', function($http){
+ToDoApp.controller('ToDoController' , function($http){
     console.log('in ToDoController');
 
     const tc = this;
@@ -16,7 +16,7 @@ ToDoApp.controller('ToDoController', function($http){
     /* function to post new to do item from DOM to server */
     //function should be a function expression
     //POST
-    tc.addListItem = function(){
+    tc.addListItem = function(itemToAdd){
         console.log('in addListItem');
 
         $http({
@@ -27,7 +27,7 @@ ToDoApp.controller('ToDoController', function($http){
             //call get request
             getListItems();
         }).catch(function(error){
-            console.log('error:' error);
+            console.log('error:', error);
             alert('unable to post item');
         });
     }
