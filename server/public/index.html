@@ -28,6 +28,7 @@
         <div class="listContainer">
            <ul id="list">
                 <li ng-repeat="item in tc.listOfItems" ng-class="item.complete ? 'completed' : 'undone'">
+                    <input type="checkbox"/>
                     {{item.instruction}}
                 </li>
            </ul>
