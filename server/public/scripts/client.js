@@ -22,6 +22,7 @@ ToDoApp.controller('ToDoController' , function($http){
             console.log(itemToAdd);
             //call get request
             getListItems();
+            tc.reset();
         }).catch(function(error){
             console.log('error in client post:', error);
             alert('unable to post item');
@@ -70,6 +71,15 @@ ToDoApp.controller('ToDoController' , function($http){
             console.log('error in client get:', error);
         });
     }
+
+    tc.form = {};
+    tc.reset = function(){
+        console.log('in reset form');
+        tc.form.$setPristine;
+        tc.itemToAdd.instruction = '';
+    }
+
+
     getListItems();
     
 }); 

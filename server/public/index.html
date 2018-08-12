@@ -17,14 +17,14 @@
     <title>To Do List</title>
 </head>
 <body>
+    <h1>To Do List</h1>
     <div class="container" ng-controller="ToDoController as tc">
-        <h1>To Do List</h1>
         <div class="formContainer">
             <form name="userForm" id="addItemForm" ng-submit="tc.addListItem(tc.itemToAdd, userForm$valid)" 
                 ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }" 
                 novalidate>
                 <label for="#newItem">New Item</label>
-                <input type="text" class="form-control" 
+                <input type="text" class="form-control ng-valid ng-valid-required ng-pristine" 
                     name="task" ng-model="tc.itemToAdd.instruction" 
                     placeholder="e.g. start list"
                     required/>
