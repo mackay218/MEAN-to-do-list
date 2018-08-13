@@ -25,6 +25,7 @@ Completed Features
 [x] routes in router
 [x] create 'PUT' route for complete/checkbox list item
 [x] create 'DELETE' route and buttons 
+[x] reset form
 
     CSS
 [] Background color of the page

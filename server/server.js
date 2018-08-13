@@ -33,8 +33,6 @@ mongoose.connection.on('error', (error) => {
     console.log('ERROR CONNECTING TO MONGO', error);
 });
 
-
-
 // spin up server
 app.listen(PORT, () => {
     console.log('server up on:', PORT);

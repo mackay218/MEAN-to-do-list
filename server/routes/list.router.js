@@ -48,9 +48,28 @@ router.put('/itemComplete/:id', (req, res) =>{
         }).catch((error) => {
             res.sendStatus(500);
             console.log('error in router put:', error);
-        })
+        });
    });
 });
+
+router.put('/itemConfirm/:id', (req, res) => {
+    console.log('in update confirm:', req.params.id);
+    ListOfItems.findOne({_id: req.params.id}).then((foundItem) => {
+        console.log('item found:', foundItem.confirm);
+        if(foundItem.confirm == true){
+            foundItem.confirm = false;
+        }
+        else if(foundItem.confirm == false){
+            foundItem.confirm = true;
+        }
+     
+        foundItem.save().then((response) => {
+            res.sendStatus(200);
+        }).catch((error) =>{
+            res.sendStatus(500);
+        });
+    })
+})
 
 //DELETE
 /* function to delete item from DOM and database */

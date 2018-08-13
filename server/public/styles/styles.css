@@ -13,6 +13,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #BCD9E2;
 }
 
 .completed{
@@ -23,9 +24,36 @@ body{
     background-color: transparent;
 }
 
+ul{
+    padding: 0;
+    list-style: none;
+}
+
 li{
+    position: relative;
     height: 30px;
-    width: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.task{
+    height: 100%;
+    width: auto;
+}
+
+.checkBox{
+    position: absolute;
+    left: 0;
+    margin-top: 5px;
+}
+
+.deleteBtn{
+    position: absolute;
+    right: 0;
+    background: transparent;
+    color: #205C70;
 }
 
 .container{
@@ -84,5 +112,6 @@ li{
 }
 
 .listContainer{
+    padding: 2vh 2vw 2vw 2vh;
     overflow-y: scroll;
 }

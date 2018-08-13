@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const ListItemSchema = new Schema({
     instruction: { type: String },
-    complete: { type: Boolean, default: false }
+    complete: { type: Boolean, default: false },
+    confirm: {type: Boolean, default: true}
 });  
 
 module.exports = mongoose.model('ListOfItems', ListItemSchema);

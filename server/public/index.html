@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <!--bootstrap css-->
+    <link rel="stylesheet" href="styles/css/bootstrap.css"/>       
+    <!--local styles-->
+    <link rel="stylesheet" href="styles/styles.css"/>
+
     <!--AngularJS-->
     <script src="vendors/angular.min.js"></script>
     <!--local JS-->
     <script src="scripts/client.js"></script>
-    <!--font awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous">
-    <!--local styles-->
-    <link rel="stylesheet" href="styles/styles.css"/>
     <title>To Do List</title>
 </head>
 <body>
@@ -34,12 +37,16 @@
         <div class="listContainer">
            <ul id="list">
                 <li ng-repeat="item in tc.listOfItems" ng-class="item.complete ? 'completed' : 'undone'">
-                    <input type="checkbox" 
-                    ng-checked="item.complete"
-                    ng-click="tc.completeItem(item._id)" 
-                    />
-                    {{item.instruction}}
-                    <button ng-click="tc.deleteItem(item._id)"><i class="fas fa-times"></i></button>
+                    <input class="checkBox" type="checkbox" 
+                        ng-checked="item.complete"
+                        ng-click="tc.completeItem(item._id)" />
+                    <p class="task" >{{item.instruction}}</p>
+                    <button class="deleteBtn" ng-click="tc.areYouSure(item._id)"><i class="fas fa-times"></i></button>
+                    <div ng-hide="item.confirm">
+                        <p>Are you sure?</p>
+                        <button class="yesBtn" ng-click="tc.deleteItem(item._id)">Yes</button>
+                        <button class="noBtn" ng-click="tc.areYouSure(item._id)">No</button>
+                    </div>
                 </li>
            </ul>
         </div>

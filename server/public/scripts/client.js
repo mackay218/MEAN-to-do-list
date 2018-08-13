@@ -44,6 +44,18 @@ ToDoApp.controller('ToDoController' , function($http){
     } //end completeItem
 
 
+    tc.areYouSure = function(itemID){
+        $http({
+            method: 'PUT',
+            url: '/list/itemConfirm/' + itemID
+        }).then( function(response){
+            console.log('client side put confirm:', itemID);
+            getListItems();
+        }).catch(function(error){
+            console.log('error in confirm put:', error);
+        });
+    }
+
     tc.deleteItem = function(itemID){
         $http({
             method: 'DELETE',
@@ -73,6 +85,7 @@ ToDoApp.controller('ToDoController' , function($http){
     }
 
     tc.form = {};
+
     tc.reset = function(){
         console.log('in reset form');
         tc.form.$setPristine;
