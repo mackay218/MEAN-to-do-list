@@ -16,7 +16,7 @@ app.use(express.static('server/public'));
 const PORT = process.env.PORT || 5000;
 
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb://localhost:27017/listItems';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/listItems';
 
 //attempt to connect
 mongoose.connect(mongoURI, { useNewUrlParser: true });

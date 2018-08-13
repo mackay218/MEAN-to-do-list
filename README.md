@@ -1,5 +1,17 @@
 # MEAN-to-do-list
 
+This is a To Do list app built in the MEAN stack.
+
+Tasks can be added to the list and given a priority level.
+
+Tasks currently in the list can be set to 'completed' 
+by checking a box or 'undone' by unchecking the box.
+
+Tasks can be deleted after completing confirmation dialog.
+
+Tasks can be sorted / re-ordered in the list by 'completed' status 
+or priority level.
+
 BUILT WITH
 
 Mongodb, ExpressJS, AngularJS, NodeJS
@@ -7,8 +19,8 @@ Mongodb, ExpressJS, AngularJS, NodeJS
 GETTING STARTED
 
 Install Node Express and Mongoose in the project.
-Make sure Mongo connects by runnint 'mongod' in a seperate terminal 
-before running the project.
+Make sure Mongo connects by running 'mongod' in a seperate terminal 
+before starting the project with npm start.
 
 Completed Features
 
@@ -52,10 +64,12 @@ Completed Features
             -priority or complete/undone
 [x] Adjust the logic so that completed tasks are brought to the bottom of the page,       where the remaining tasks left to complete are brought to the top of the list.
 
+Next Steps
+
 [] check all/ complete all check box
 [] multiple lists
-
-Next Steps
+[] login / database of users with personal to do lists 
+    not accessible by other users.
 
 Authors
 

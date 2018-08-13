@@ -71,7 +71,7 @@ ToDoApp.controller('ToDoController' , function($http){
             url: '/list/' + itemID
         }).then(function(response){
             console.log('deleted:', itemID);
-            getListItems();
+            getListItems();f
         }).catch(function(error){
             console.log('DELETE request error', error);
         });

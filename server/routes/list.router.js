@@ -93,7 +93,8 @@ router.put('/', (req, res) => {
 //DELETE
 /* function to delete item from DOM and database */
 router.delete('/:id', (req, res) => {
-    ListOfItems.findByIdAndRemove(req.params.id).then((response) => {
+    ListOfItems.findByIdAndRemove(req.params.id).then((deletedTask) => {
+        console.log(deletedTask);
         res.sendStatus(200);
     }).catch((error) =>{
         res.sendStatus(500);
