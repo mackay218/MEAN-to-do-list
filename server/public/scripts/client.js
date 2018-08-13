@@ -8,6 +8,12 @@ ToDoApp.controller('ToDoController' , function($http){
     //empty array to hold list items
     tc.listOfItems = [];
 
+    //array to hold priority options 
+    tc.priorityLevels = [{level: 1, name: 'high'}, {level: 2, name: 'medium'}, {level: 3, name: 'low'}];
+
+    //array to hold sort options
+    tc.categories = ['priority', 'complete']
+
     /* function to post new to do item from DOM to server */
     //function should be a function expression
     //POST
@@ -85,15 +91,16 @@ ToDoApp.controller('ToDoController' , function($http){
         }).catch(function(error){
             console.log('error in client get:', error);
         });
-    }
+    }; //end getListItems
 
     tc.form = {};
 
     /* function to reset form */
     tc.reset = function(){
         console.log('in reset form');
-        tc.form.$setPristine;
+        tc.itemToAdd.instruction.$setPristine;
         tc.itemToAdd.instruction = '';
+        //tc.itemToAdd.priority.selectedIndex = 1;
     }//end reset
 
     //PUT
@@ -108,10 +115,21 @@ ToDoApp.controller('ToDoController' , function($http){
         }).catch(function(error){
             console.log('error in client put:', error);
         });
-    }
+    }; //end resetConfirm
 
     tc.resetConfirm();
 
-    
+    /*function to sort tasks by category: priority */
+    tc.sortChange = function(sortTerm){
+        console.log('in sortChange');
+        if(sortTerm == 'priority'){
+            tc.term = "priority.level";
+        }
+        else if(sortTerm = 'complete'){
+            tc.term = "complete";
+        }
+        console.log('sortTerm:', tc.term);
+    }; //end sortChange
+
 }); 
 

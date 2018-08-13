@@ -33,8 +33,8 @@ Completed Features
 [] text color &or background color of tasks to show whether or not they have been        completed
 
     STRETCH GOALS
-[] Implement Bootstrap to take the visuals of the page up a notch.
-[] In whatever fashion you would like, create an 'are you sure: yes / no' option when [x] deleting a task. Once again, you can interpret this however you would like.
+[x] Implement Bootstrap to take the visuals of the page up a notch.
+[x] In whatever fashion you would like, create an 'are you sure: yes / no' option when [x] deleting a task. Once again, you can interpret this however you would like.
 [x] Move the inputs into a form and use ng-submit so that the user can hit enter to       add a new task.
 [x] Add front-end validation to the 'make-a-task' form.
 [] Add a category field for the task. Allow users to filter by task category.

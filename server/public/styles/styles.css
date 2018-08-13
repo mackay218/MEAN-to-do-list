@@ -20,9 +20,7 @@ body{
     background-color: green;
 }
 
-.undone{
-    background-color: transparent;
-}
+
 
 ul{
     padding: 0;
@@ -59,6 +57,11 @@ li{
 .container{
     width: 100vw;
     height: 80vh;
+}
+
+.confirmBox{
+    display: flex;
+    flex-direction: row;
 }
 
 @media only screen and (orientation: landscape){

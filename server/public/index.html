@@ -31,18 +31,34 @@
                     name="task" ng-model="tc.itemToAdd.instruction" 
                     placeholder="e.g. start list"
                     required/>
+                <label for="#priority">Priority</label>
+                    <select id="#priority" name="levels"
+                        class="ng-dirty"
+                        ng-model="tc.itemToAdd.priority"
+                        ng-init="tc.itemToAdd.priority = tc.priorityLevels[0]"
+                        ng-options="option.name for option in tc.priorityLevels">
+                    </select>
                 <button id="submitBtn" ng-disabled="userForm.$invalid">Submit</button>
             </form>
         </div>
         <div class="listContainer">
+            <div id="sortContainer">
+                <label for="#sortChoice">Priority</label>
+                <select id="sortChoice" name="repeatList"
+                    ng-model="sortChoiceSelected"
+                    ng-change="tc.sortChange(sortChoiceCollected)"
+                    ng-init="sortChoiceSelected = tc.categories[0]"
+                    ng-options="option for option in tc.categories">
+                </select>
+            </div>
            <ul id="list">
-                <li ng-repeat="item in tc.listOfItems" ng-class="item.complete ? 'completed' : 'undone'">
+                <li ng-repeat="item in tc.listOfItems | orderBy:tc.term" ng-class="item.complete ? 'completed' : 'undone'">
                     <input class="checkBox" type="checkbox" 
                         ng-checked="item.complete"
                         ng-click="tc.completeItem(item._id)" />
-                    <p class="task" >{{item.instruction}}</p>
+                    <p class="task" ng-show="item.confirm">{{item.instruction}}</p>
                     <button class="deleteBtn" ng-click="tc.areYouSure(item._id)"><i class="fas fa-times"></i></button>
-                    <div ng-hide="item.confirm">
+                    <div class="confirmBox" ng-hide="item.confirm">
                         <p>Are you sure?</p>
                         <button class="yesBtn" ng-click="tc.deleteItem(item._id)">Yes</button>
                         <button class="noBtn" ng-click="tc.areYouSure(item._id)">No</button>
