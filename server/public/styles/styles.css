@@ -29,11 +29,6 @@ h1{
     background-color: rgba(0,0,0,0.2);
 }
 
-ul{
-    padding: 0;
-    list-style: none;
-}
-
 label{
     font-weight: 700;
 }
@@ -50,13 +45,13 @@ tr{
     width: 80%;
     display: flex;
     flex-direction: row;
-    padding:5px 0 0 5px;
     justify-content: center;
     margin-bottom: 5px;
     font-family: 'Roboto', sans-serif;
 }
 
 td{
+    margin: 0;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -213,8 +208,21 @@ button:hover{
 }
 
 
+.high{
+    border-left: 5px solid green;
+}
+
+.medium{
+    border-left: 5px solid yellow;
+}
+
+.low{
+    border-left: 5px solid red;
+}
+
 .hiddenTable{
     width: 0;
     opacity: 0;
+    height: 0;
 }
 
