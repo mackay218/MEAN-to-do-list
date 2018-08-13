@@ -6,6 +6,10 @@ Mongodb, ExpressJS, AngularJS, NodeJS
 
 GETTING STARTED
 
+Install Node Express and Mongoose in the project.
+Make sure Mongo connects by runnint 'mongod' in a seperate terminal 
+before running the project.
+
 Completed Features
 
 [x] .gitignore
@@ -28,9 +32,9 @@ Completed Features
 [x] reset form
 
     CSS
-[] Background color of the page
-[] font family and size
-[] text color &or background color of tasks to show whether or not they have been        completed
+[x] Background color of the page
+[x] font family and size
+[x] text color &or background color of tasks to show whether or not they have been        completed
 
     STRETCH GOALS
 [x] Implement Bootstrap to take the visuals of the page up a notch.
