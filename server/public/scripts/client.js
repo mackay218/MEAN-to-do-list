@@ -77,9 +77,9 @@ ToDoApp.controller('ToDoController' , function($http){
         });
     };//end deleteItem
 
+    //GET 
     /* function to get to do list from server */
     //using a declaritive function
-    //GET 
     function getListItems(){
         console.log('in getListItems');
 

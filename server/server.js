@@ -25,7 +25,6 @@ mongoose.connect(mongoURI, { useNewUrlParser: true });
 /*success or failure*/
 //success
 mongoose.connection.on('open', () => {
-    
     console.log('Connected to Mongo');
 });
 //failure

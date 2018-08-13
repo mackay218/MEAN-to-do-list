@@ -72,7 +72,7 @@ router.put('/itemConfirm/:id', (req, res) => {
         });
     });
 });// end confirm delete put route
-
+    
 router.put('/', (req, res) => {
     console.log('server reset confirm');
     ListOfItems.find({}).then((foundListItems) => {
@@ -89,7 +89,6 @@ router.put('/', (req, res) => {
         
     });
 });
-
 
 //DELETE
 /* function to delete item from DOM and database */
