@@ -41,7 +41,7 @@ Completed Features
 [x] In whatever fashion you would like, create an 'are you sure: yes / no' option when [x] deleting a task. Once again, you can interpret this however you would like.
 [x] Move the inputs into a form and use ng-submit so that the user can hit enter to       add a new task.
 [x] Add front-end validation to the 'make-a-task' form.
-[] Add a category field for the task. Allow users to filter by task category.
+[x] Add a category field for the task. Allow users to filter by task category.
     -dropdown menu for priority level in form
     - priority: {level: 1, name: 'high'} in schema;
     - apply class to list item inner container to change border color;
@@ -50,7 +50,7 @@ Completed Features
     -second dropdown menu for sorting in list container
         -orderBy: 
             -priority or complete/undone
-[] Adjust the logic so that completed tasks are brought to the bottom of the page,       where the remaining tasks left to complete are brought to the top of the list.
+[x] Adjust the logic so that completed tasks are brought to the bottom of the page,       where the remaining tasks left to complete are brought to the top of the list.
 
 [] check all/ complete all check box
 [] multiple lists
