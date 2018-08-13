@@ -123,10 +123,10 @@ ToDoApp.controller('ToDoController' , function($http){
     tc.sortChange = function(sortTerm){
         console.log('in sortChange');
         if(sortTerm == 'priority'){
-            tc.term = "priority.level";
+            tc.term = 'priority.level';
         }
         else if(sortTerm = 'complete'){
-            tc.term = "complete";
+            tc.term = 'complete';
         }
         console.log('sortTerm:', tc.term);
     }; //end sortChange

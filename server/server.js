@@ -11,7 +11,6 @@ app.use('/list', listRouter);
 
 app.use(express.static('server/public'));
 
-
 // globals
 // if process.env.PORT is undefined, use 5000
 const PORT = process.env.PORT || 5000;
