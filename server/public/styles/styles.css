@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-    border: 1px solid black;
 }
 
 html, body{
@@ -14,17 +13,27 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: #BCD9E2;
+    font-family: 'Roboto', sans-serif;
 }
 
+h1{
+    min-width: 200px;
+}
 .completed{
-    background-color: green;
+    background-color:rgba(61, 157, 94, 0.5);
 }
 
-
+.undone{
+    background-color: rgba(0,0,0,0.2);
+}
 
 ul{
     padding: 0;
     list-style: none;
+}
+
+label{
+    font-weight: 700;
 }
 
 li{
@@ -34,16 +43,20 @@ li{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .task{
     height: 100%;
     width: auto;
+    margin-right: 5px;
 }
 
 .checkBox{
     position: absolute;
-    left: 0;
+    left: 5px;
     margin-top: 5px;
 }
 
@@ -52,6 +65,7 @@ li{
     right: 0;
     background: transparent;
     color: #205C70;
+    border: none;
 }
 
 .container{
@@ -62,14 +76,24 @@ li{
 .confirmBox{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
 }
+
+.formInput{
+    margin-left: 10px;
+    min-width: 100px;
+}
+
 
 @media only screen and (orientation: landscape){
     form{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        height: 30%;
+        width: 80%;
     }
     
     .container{
@@ -90,22 +114,51 @@ li{
      form{
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        width: 60%;
     }
     
+    .formLabel{
+        width: auto;
+        padding-top: 10px;
+    }
+
+    .formInput{
+        width: 50%;
+    }
+
     .container{
         display: flex;
         flex-direction: column;
     }
     .formContainer{
-       
+        height: 30%;
         width: 100vw;
     }
      .listContainer{
-        max-height: 50%;
+        height: 50%;
         width: 100vw;
+        padding-right: 2vw;
     }
+    ul{
+        position: relative;
+        left: 5vw;
+    }
+    li{
+        width:80%;
+    }
+}
+
+#submitBtn{
+    border-radius: 10px;
+    border: 1px solid  #205C70;
+    box-shadow: 2px 2px rgba(0,0,0,0.5);
+    margin-left: 10px;
+}
+
+#submitBtn:hover{
+    box-shadow: 0 0 10px  rgba(255,255,255,1);
 }
 
 .formContainer{
@@ -117,4 +170,17 @@ li{
 .listContainer{
     padding: 2vh 2vw 2vw 2vh;
     overflow-y: scroll;
+    border-left: 5px solid #205C70;
 }
+
+.yesBtn{
+    background-color: rgba(214, 103, 83, 0.5);
+    border-radius: 10px;
+    margin-right: 0 5px 0 5px;
+}
+
+.noBtn{
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
+

@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <!--bootstrap css-->
-    <link rel="stylesheet" href="styles/css/bootstrap.css"/>       
+    <link rel="stylesheet" href="styles/css/bootstrap.css"/>  
+    <!--font --> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    
     <!--local styles-->
     <link rel="stylesheet" href="styles/styles.css"/>
 
@@ -26,33 +29,17 @@
             <form name="userForm" id="addItemForm" ng-submit="tc.addListItem(tc.itemToAdd, userForm$valid)" 
                 ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }" 
                 novalidate>
-                <label for="#newItem">New Item</label>
-                <input type="text" class="form-control ng-valid ng-valid-required ng-pristine" 
+                <label class="formLabel" for="#newItem">New Item</label>
+                <input type="text" class="formInput form-control ng-valid ng-valid-required ng-pristine" 
                     name="task" ng-model="tc.itemToAdd.instruction" 
                     placeholder="e.g. start list"
                     required/>
-                <label for="#priority">Priority</label>
-                    <select id="#priority" name="levels"
-                        class="ng-dirty"
-                        ng-model="tc.itemToAdd.priority"
-                        ng-init="tc.itemToAdd.priority = tc.priorityLevels[0]"
-                        ng-options="option.name for option in tc.priorityLevels">
-                    </select>
                 <button id="submitBtn" ng-disabled="userForm.$invalid">Submit</button>
             </form>
         </div>
         <div class="listContainer">
-            <div id="sortContainer">
-                <label for="#sortChoice">Priority</label>
-                <select id="sortChoice" name="repeatList"
-                    ng-model="sortChoiceSelected"
-                    ng-change="tc.sortChange(sortChoiceCollected)"
-                    ng-init="sortChoiceSelected = tc.categories[0]"
-                    ng-options="option for option in tc.categories">
-                </select>
-            </div>
            <ul id="list">
-                <li ng-repeat="item in tc.listOfItems | orderBy:tc.term" ng-class="item.complete ? 'completed' : 'undone'">
+                <li ng-repeat="item in tc.listOfItems" ng-class="item.complete ? 'completed' : 'undone'">
                     <input class="checkBox" type="checkbox" 
                         ng-checked="item.complete"
                         ng-click="tc.completeItem(item._id)" />
